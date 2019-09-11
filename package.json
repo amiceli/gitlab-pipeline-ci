@@ -1,14 +1,14 @@
 {
-  "name": "ci-gitlab",
+  "name": "@amiceli/gitlab-pipeline-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Show last pipeline for specify project",
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.js src/ --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["gitlab", "pipeline", "cli"],
+  "author": "amiceli",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^8.1.0",
