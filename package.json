@@ -1,6 +1,6 @@
 {
   "name": "@amiceli/gitlab-pipeline-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Show last pipeline for specify project",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "@amiceli/eslint-config-javascript": "^1.0.2"
+    "@amiceli/eslint-config-javascript": "^1.0.2",
+    "nodemon": "^1.19.2"
   },
   "bin": {
     "gitlab-pipeline-cli": "./index.js"
