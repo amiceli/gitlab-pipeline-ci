@@ -2,9 +2,9 @@ const axios = require('axios')
 
 class PipelinesApi {
 
-    constructor (projectId) {
-        this.token = process.env.GITLAB_TOKEN
-        this.url = process.env.GITLAB_URL
+    constructor (projectId, token, url) {
+        this.token = token
+        this.url = url
         this.projectId = projectId
     }
 

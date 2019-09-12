@@ -4,7 +4,7 @@ class Display {
 
     static showPipelines (pipeline) {
         const str = `
-            ${pipeline.ref.padEnd(20)} trigger by ${pipeline.user.username} on commit ${pipeline.sha}
+            ${pipeline.ref.padEnd(60)} trigger by ${pipeline.user.username}
         `
 
         this.getDisplayMethod(pipeline)(str.trim())

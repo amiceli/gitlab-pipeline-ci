@@ -1,18 +1,18 @@
-require('dotenv').config()
+#!/usr/bin/env node
 
 const axios = require('axios')
 const signale = require('signale')
 const PipelinesApi = require('./src/PipelinesApi')
 const Display = require('./src/Display')
 
-const {project, limit} = require('./src/init')(process.argv.slice(2))
+const {project, limit, token, url} = require('./src/init')(process.argv.slice(2))
 
 const run = async () => {
     try {
-        const api = new PipelinesApi(project)
+        const api = new PipelinesApi(project, token, url)
         const pipelines = await api.loadLast(limit)
 
-        console.log('\033[2J');
+        process.stdout.write('\x1Bc')
 
         for (let pipeline of pipelines) {
             Display.showPipelines(pipeline)
