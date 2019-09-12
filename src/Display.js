@@ -1,10 +1,18 @@
-const signale = require('signale')
+const signale = require('./Signale.js')
 
 class Display {
 
     static showPipelines (pipeline) {
+        let ref
+
+        if (pipeline.ref.length > 20) {
+            ref = `${pipeline.ref.slice(0, 17)}...`
+        } else {
+            ref = pipeline.ref.slice(0, 20).padEnd(20)
+        }
+
         const str = `
-            ${pipeline.ref.padEnd(60)} trigger by ${pipeline.user.username}
+            ${ref} trigger by ${pipeline.user.username}
         `
 
         this.getDisplayMethod(pipeline)(str.trim())
@@ -17,13 +25,13 @@ class Display {
             case 'pending':
                 return signale.pending
             case 'skipped':
-                return signale.debug
+                return signale.skipped
             case 'canceled':
-                return signale.debug
+                return signale.canceled
             case 'failed':
                 return signale.fatal
             case 'running':
-                return signale.watch
+                return signale.building
             default:
                 return signale.success
         }

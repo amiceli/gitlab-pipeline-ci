@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const axios = require('axios')
-const signale = require('signale')
+const signale = require('./src/Signale.js')
 const PipelinesApi = require('./src/PipelinesApi')
 const Display = require('./src/Display')
 

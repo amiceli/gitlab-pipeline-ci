@@ -21,10 +21,12 @@ module.exports = (args) => {
         displayError('url')
     }
 
-    return { 
+    limit = Number.isNaN(argv.limit) ? 5 : argv.limit
+
+    return {
         project : argv.project,
-        limit : argv.limit || 5 ,
+        limit,
         url : argv.url,
-        token : argv.token
+        token : argv.token,
     }
 }
