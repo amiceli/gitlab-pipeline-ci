@@ -1,4 +1,4 @@
-const {Signale} = require('signale')
+const { Signale } = require('signale')
 
 const options = {
     types : {
@@ -21,8 +21,8 @@ const options = {
             logLevel : 'info',
         },
         fatal : {
-            label : 'failed'
-        }
+            label : 'failed',
+        },
     },
 }
 

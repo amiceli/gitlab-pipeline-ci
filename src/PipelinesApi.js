@@ -9,6 +9,7 @@ class PipelinesApi {
     }
 
     async loadLast (limit) {
+        const repository = await this.getProjectDetails()
         const response = await axios.get(this.pipelinesUrl, this.authOptions)
         const pipelines = response.data
         const selected = pipelines.slice(0, limit)
@@ -21,11 +22,26 @@ class PipelinesApi {
 
         const promisesResponses = await Promise.all(pipelinesPromises)
 
-        return promisesResponses.map((resp) => resp.data)
+        return {
+            repository, pipelines : promisesResponses.map((resp) => resp.data)
+        }
+    }
+
+    async getProjectDetails () {
+        const response = await axios.get(this.projectUrl, this.authOptions)
+
+        return {
+            name : response.data.name,
+            link : response.data._links.self
+        }
     }
 
     async loadPipeline (pipeline) {
         return axios.get(this.getPipelineUrl(pipeline.id), this.authOptions)
+    }
+
+    get projectUrl () {
+        return `${this.url}/api/v4/projects/${this.projectId}`
     }
 
     get pipelinesUrl () {
