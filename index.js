@@ -11,15 +11,14 @@ process.stdin.setRawMode(true)
 
 const { project, limit, token, url } = require('./src/init')(process.argv.slice(2))
 
+process.stdin.on('keypress', (str, key) => {
+    console.log(key.name)
+    if (key.name === 'q') {
+        process.exit()
+    }
+})
+
 const run = async () => {
-
-    process.stdin.on('keypress', (str, key) => {
-        console.log(key.name)
-        if (key.name === 'q') {
-            process.exit()
-        }
-    })
-
     try {
         const api = new PipelinesApi(project, token, url)
         const { pipelines, repository } = await api.loadLast(limit)
