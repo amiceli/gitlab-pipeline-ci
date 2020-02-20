@@ -12,7 +12,7 @@ class Display {
         }
 
         const str = `
-            ${ref} trigger by ${pipeline.user.username}
+            #${pipeline.id} ${ref} trigger by ${pipeline.user.username}
         `
 
         this.getDisplayMethod(pipeline)(str.trim())

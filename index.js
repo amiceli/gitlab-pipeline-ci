@@ -26,8 +26,10 @@ const run = async () => {
 
         process.stdout.write('\x1Bc')
 
+		const webUrl = pipelines[0].web_url.split('pipeline')[0]
+
         console.log(`Repository ${repository.name}`)
-        console.log(`Url        ${repository.link}`)
+        console.log(`Url        ${webUrl}`)
         console.log('')
 
         for (let pipeline of pipelines) {
