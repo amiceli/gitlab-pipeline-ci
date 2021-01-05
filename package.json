@@ -14,7 +14,7 @@
   "author": "amiceli",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cli-table": "^0.3.1",
     "dotenv": "^8.1.0",
     "minimist": "^1.2.0",
