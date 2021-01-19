@@ -1,5 +1,7 @@
 # gitlab-pipeline-ci
 
+# UNMAINTENED : prefer deno version
+
 Show last pipelines for specific projects
 
 ## Usage
@@ -10,6 +12,3 @@ Console will output last 5 (or more/less) pipeline for specified project and ref
 
 For **gitlab-url** you need to specify http:// or https:// .
 
-## Todo
-
-[ ] Add parameter for timeout
