@@ -1,15 +1,9 @@
-# gitlab-pipeline-ci
+# gitlab-pipeline-cli
 
-Show last pipelines for specific projects
+## How to run
 
-## Usage
+    deno run --allow-net index.ts --project <project-id> --token <token> --url <gitlab> --limit <limit:optional>
 
-    gitlab-pipeline-cli --project=<project-id> --token=<token> --url=<gitlab-url> --limit=<limit-optional-default-5>
+## How to install
 
-Console will output last 5 (or more/less) pipeline for specified project and refresh every 5 seconds.
-
-For **gitlab-url** you need to specify http:// or https:// .
-
-## Todo
-
-[ ] Add parameter for timeout
+    
