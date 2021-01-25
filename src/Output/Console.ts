@@ -60,6 +60,9 @@ class Console {
             return `${styles.red.open}✖ error${styles.red.close}`
         }
         if (p.status === 'canceled') {
+            return `${styles.grey.open}→ canceled${styles.grey.close}`
+        }
+        if (p.status === 'skipped') {
             return `${styles.grey.open}→ skipped${styles.grey.close}`
         }
         if (p.status === 'running') {
