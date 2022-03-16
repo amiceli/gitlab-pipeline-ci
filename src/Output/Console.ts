@@ -36,8 +36,11 @@ class Console {
         this.pipelines.forEach((p : Pipeline) => {
             const status = this.getStyleStatus(p).padEnd(20, ' ')
             const ref = this.getRef(p)
-
-            console.log(`${status}${p.id} ${ref} ${p.username}`)
+            if (p.duration) {
+                console.log(`${status}${p.id} ${ref} ${p.username.padEnd(20)} ${Math.round(p.duration / 60)} minutes`)
+            } else {
+                console.log(`${status}${p.id} ${ref} ${p.username}`)
+            }
         })
     }
 

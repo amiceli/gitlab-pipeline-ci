@@ -8,18 +8,21 @@ class Pipeline {
 
     public readonly username: string
 
-    private constructor(id: number, status: string, ref: string, username: string) {
+    public readonly duration: number | null
+
+    private constructor(id: number, status: string, ref: string, username: string, duration : number | null) {
         this.id = id
         this.status = status
         this.ref = ref
         this.username = username
+        this.duration = duration
     }
 
     public static fromApiResponse(response: any) {
-        const { id, status, ref, user } = response
+        const { id, status, ref, user, duration } = response
         const { name } = user
 
-        return new Pipeline(id, status, ref, name)
+        return new Pipeline(id, status, ref, name, duration)
     }
 
 }
