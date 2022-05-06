@@ -53,6 +53,9 @@ class Console {
     }
 
     private getStyleStatus(p : Pipeline) : string {
+        if (p.status === 'manual') {
+            return `${styles.white.open}✖ blocked${styles.white.close}`
+        }
         if (p.status === 'success') {
             return `${styles.green.open}✓ success${styles.green.close}`
         }
